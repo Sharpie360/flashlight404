@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flashlight 404</title>
+  <link rel="stylesheet" href="./main-finished.css">
+</head>
+<body>
+
+  <div id="container">
+
+    <div id="flashlight"></div>
+
+    <div class="headings">
+      <h1 id="display">404</h1>
+      <h3>whoops.. something seems to have been misplaced...</h3>
+      <h4>don't worry, we'll get it sorted out...</h4>
+    </div>
+
+  </div>
+
+  <script>
+    
+    const container = document.getElementById('container')
+    const flashlight = document.getElementById('flashlight')
+
+    let xPos = 0
+    let yPos = 0
+
+    container.addEventListener('mousemove', function(e){
+      xPos = e.clientX
+      yPos = e.clientY
+      console.log(xPos, yPos)
+      updateCoordinates(xPos, yPos)
+    })
+    
+    function updateCoordinates(x, y){
+      flashlight.style.left = `${x}px`
+      flashlight.style.top = `${y}px`
+    }
+
+  </script>
+</body>
+</html>
